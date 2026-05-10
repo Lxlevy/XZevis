@@ -134,11 +134,11 @@ const applyTheme = (themeId) => {
   // if vro theme (lol), randomize the order of the provided image layers each time
   if (theme.id === 'vro') {
     const imgs = [
-      '/toletole.png',
-      '/toletole2.png',
-      '/toletole3.png',
-      '/toletole4.png',
-      '/toletole5.png'
+      './toletole.png',
+      './toletole2.png',
+      './toletole3.png',
+      './toletole4.png',
+      './toletole5.png'
     ];
     // simple Fisher-Yates shuffle
     for (let i = imgs.length - 1; i > 0; i--) {
