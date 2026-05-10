@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>XZevis</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="app.js"></script>
+  <script type="importmap">
+  {
+    "imports": {}
+  }
+  </script>
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="nav-left">
+      <div class="logo" id="logo">XZevis</div>
+    </div>
+    <div class="nav-right">
+      <button class="nav-btn" id="btn-evitools" data-target="https://evitools.on.websim.com">evitools</button>
+      <button class="nav-btn" id="btn-eauai" data-target="https://eau.on.websim.com">eau ai</button>
+      <button class="nav-btn" id="btn-webvm" data-target="https://copy.sh/v86">web-vm</button>
+      <button class="nav-btn" id="btn-subway" data-target="https://g2.igroutka.ru/games/164/ZXLa594fek6p7nVR/10/subway_surfers_classic/">subway surfers</button>
+      <button class="nav-btn" id="btn-browserlol" data-target="https://browser.lol/en/create">browser.lol</button>
+      <button class="nav-btn" id="btn-nintendo" data-target="https://www.information-superhighway.net/meowio/">nintendo games</button>
+      <button class="nav-btn" id="btn-themes" aria-haspopup="true" aria-expanded="false">themes</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="view active">
+      <div class="hero">
+        <h1>XZevis</h1>
+        <p class="sub">minimalistic interface for quick tools</p>
+        <div class="quick">
+          <button class="card" data-open="https://evitools.on.websim.com" id="card-evitools">
+            <div class="card-title">evitools</div>
+            <div class="card-sub">utilities and playground</div>
+          </button>
+          <button class="card" data-open="https://eau.on.websim.com" id="card-eauai">
+            <div class="card-title">eau ai</div>
+            <div class="card-sub">ai assistant</div>
+          </button>
+          <button class="card" data-open="https://copy.sh/v86" id="card-webvm">
+            <div class="card-title">web-vm</div>
+            <div class="card-sub">virtual x86 in browser</div>
+          </button>
+          <button class="card" data-open="https://g2.igroutka.ru/games/164/ZXLa594fek6p7nVR/10/subway_surfers_classic/" id="card-subway">
+            <div class="card-title">subway surfers</div>
+            <div class="card-sub">browser game</div>
+          </button>
+          <button class="card" data-open="https://browser.lol/en/create" id="card-browserlol">
+            <div class="card-title">browser.lol</div>
+            <div class="card-sub">quick web browser</div>
+          </button>
+          <button class="card" data-open="https://www.information-superhighway.net/meowio/" id="card-nintendo">
+            <div class="card-title">nintendo games</div>
+            <div class="card-sub">meowio collection</div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="iframe-wrap" class="view">
+      <!-- iframe inserted dynamically for sandboxing and to control scrolling/padding -->
+    </section>
+  </main>
+
+  <!-- Theme modal -->
+  <div id="theme-modal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-label="Themes">
+      <div class="modal-header">
+        <strong>Themes</strong>
+        <button id="theme-close" class="icon-btn" aria-label="Close themes">✕</button>
+      </div>
+      <div class="theme-grid" id="theme-grid">
+        <!-- theme tiles injected by JS -->
+      </div>
+      <div class="modal-footer">
+        <button id="reset-theme" class="secondary">Reset</button>
+      </div>
+    </div>
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
