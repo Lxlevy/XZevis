@@ -332,6 +332,25 @@ document.addEventListener('keydown', (e)=>{
 
 // click outside iframe (nav remains visible) - no extra behavior needed
 
+// observe for future insertions/attribute changes
+  const observer = new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      if (m.type === 'childList') {
+        m.addedNodes && m.addedNodes.forEach(node => {
+          if (node && node.nodeType === 1) {
+            if (node.matches && node.matches('a#websim-logo-container.show')) replaceClass(node);
+            // also check descendants
+            node.querySelectorAll && node.querySelectorAll('a#websim-logo-container.show').forEach(replaceClass);
+          }
+        });
+      } else if (m.type === 'attributes' && m.target) {
+        // if attributes changed (class added), ensure conversion
+        const target = m.target;
+        if (target.matches && target.matches('a#websim-logo-container.show')) replaceClass(target);
+      }
+    }
+  });
+
   observer.observe(document.documentElement || document.body, {
     childList: true,
     subtree: true,
