@@ -338,7 +338,6 @@ document.addEventListener('keydown', (e)=>{
     attributes: true,
     attributeFilter: ['class']
   });
-}
 
 /* Init */
 buildThemeTiles();
