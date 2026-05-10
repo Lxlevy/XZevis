@@ -1,6 +1,6 @@
 # XZevis
  
-A stupid lil fun website made by [Lxlevy](https://github.com/Lxlevy) just for the fun of it.
+A stupid lil fun website made by [Lxlevy](https://github.com/Lxlevy) (thats me!) just for the fun of it.
  
 ## Features
  
